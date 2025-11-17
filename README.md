@@ -5,47 +5,34 @@ To design the schematic and PCB layout diagram of an LED Sequencer circui circui
 ●	Hardware: Personal Computer (PC)<br>
 ●	Software: Altium  <br>
 # PROCEDURE:
-•  Open Altium & create a project<br>
-File → New → Project → choose PCB Project. Give it a name and folder.<br>
-•  Add a schematic sheet<br>
-Right-click the project → Add New to Project → Schematic. Save it (e.g., project.SchDoc).<br>
-•  Place components<br>
-Use Components panel or Place → Part. Search library parts (resistors, ICs, connectors). Place each part and assign a designator (R1, C1, U1).<br>
-•  Wire the circuit<br>
-Use the Wire tool to connect pins. Add net labels for power (VCC, GND) and important signals. Keep wires neat.<br>
-•  Annotate & check<br>
-Tools → Annotation to give unique designators if needed. Run Electrical Rule Check (ERC) and fix any errors/warnings.<br>
-•  Add PCB document<br>
-Right-click project → Add New to Project → PCB. Save it (e.g., project.PcbDoc).<br>
-•  Compile and update PCB<br>
-On the schematic: Design → Compile Project. Then Design → Update PCB Document → Review ECO → Execute to push parts to PCB.<br>
-•  Define board shape<br>
-In PCB view: Design → Define Board Shape → Draw outline to the required size.<br>
-•  Place components on board<br>
-Move parts from the component list onto the board. Place connectors at the edge, group related parts, keep critical parts (crystals, sensors) positioned carefully.<br>
-•  Set design rules<br>
-PCB → Design Rules → set trace width, clearance, via sizes. For beginners, use default rules or teacher-provided values.<br>
-•  Route tracks<br>
-Use Interactive Routing (Route → Interactive Route) to connect pads. Route power traces wider (e.g., 1.5–2×). Use ratsnest to see remaining connections.<br>
-•  Add ground/power planes (optional)<br>
-Place a polygon pour for GND or VCC for better grounding: Place → Polygon Pour → set layer & net → Pour.<br>
-•  Run Design Rule Check (DRC)<br>
-PCB → Design → Rules Check (or Tools → Design Rule Check). Fix spacing, un-routed nets, or overlapping pads.<br>
-•  Add silkscreen & labels<br>
-On the Silkscreen layer, add component names, polarity marks, board name/version.<br>
-•  3D check (optional)<br>
-View → 3D Layout Mode to inspect component heights and mechanical fit.<br>
-•  Prepare fabrication outputs<br>
-File → Fabrication Outputs → Gerber Files (select layers: top/bottom copper, solder mask, silkscreen). Also generate NC Drill Files.<br>
-•  Generate assembly files<br>
-File → Assembly Outputs → Pick and Place (Centroid) and BOM (Bill of Materials).<br>
-•  Verify outputs<br>
-Open generated Gerbers in a Gerber viewer to confirm layers and drill map look correct.<br>
-•  Create final archive<br>
-Zip the project folder and all output files (Gerbers, Drill, BOM, Pick-and-Place). Add a Readme with board name and revision.<br>
-•  Send to manufacturer<br>
-Upload the zip to your PCB fab and follow their order steps.<br>
->
+Open Your PCB Project<br>
+	Launch Altium Designer.<br>
+	Open your completed PCB design project (.PrjPcb).<br>
+	Ensure your PCB layout is finalized, with correct layers, footprints, and clearances.<br>
+Check Design Rules and Electrical Rules<br>
+	Go to Tools > Design Rule Check (DRC).<br>
+	Run checks for clearance, short circuits, and net connectivity.<br>
+	Fix any errors before generating outputs.<br>
+Open the Output Job File (Optional)<br>
+	Go to File > New > Output Job File to create an .OutJob file.<br>
+	Add Gerber Files, NC Drill Files, and other manufacturing outputs as needed.<br>
+Generate Gerber Files<br>
+	Go to File > Fabrication Outputs > Gerber Files.<br>
+	In the Gerber Setup window, configure:<br>
+o	Units (mm or inch)<br>
+o	Format (usually 4:4 or 2:5)<br>
+o	Layers to Plot: Select top layer, bottom layer, solder mask layers, silkscreen layers, etc.<br>
+o	Set Aperture and Plot Options (mirror, include pad holes, etc.)<br>
+Generate NC Drill Files<br>
+	Go to File > Fabrication Outputs > NC Drill Files.<br>
+	Configure settings like units, format, and which holes to include.<br>
+	Click OK to generate the drill files.<br>
+Preview Gerber Files<br>
+	Use CAMtastic or any Gerber viewer (Altium has one built-in) to preview the files.<br>
+	Go to File > Import > Gerber, and inspect the output visually.<br>
+ Export Files<br>
+	All generated files will be saved in the Project Outputs folder.<br>
+	Zip all relevant files (Gerbers, NC Drill, ReadMe, Fab notes) and send to the manufacturer.<br>
 
 # THEORY:
 
@@ -67,12 +54,11 @@ The circuit is powered by a DC supply (typically 5V or 9V) connected at the VCC 
 # CIRCUIT DIAGRAM:
 ![image](https://github.com/user-attachments/assets/2cb084f1-22ea-4d4e-816d-eee72cd2918f)
 
- 
 # EXPECTED OUTPUT:
 ## Schematic diagram:
- 
+![image](https://github.com/user-attachments/assets/a5c55c7a-3950-4cb8-9179-937e21c43476)
 ## Layout diagram:
+ ![image](https://github.com/user-attachments/assets/5762403f-f739-41d6-884f-904d9b202af7)
  
 # RESULT:
-Thus, the schematic and PCB layout for the LED sequencer circuit has been successfully designed using Altium software.
-
+Thus, the schematic and PCB layout for the IoT based fan speed control circuit has been successfully designed using Altium software.
